@@ -4,7 +4,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class PrincipalComListas {
         var filmeDoJoao = new Filme("Sinners", 2025);
         Serie lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeDoJoao);
         lista.add(meuFilme);
         lista.add(outroFilme);
@@ -35,5 +35,21 @@ public class PrincipalComListas {
         }
         */
 
+        ArrayList<String> buscarArtista = new ArrayList<>();
+        buscarArtista.add("Adam Sandler");
+        buscarArtista.add("Leonardo Dicaprio");
+        buscarArtista.add("Keanu Reeves");
+        System.out.println(buscarArtista);
+
+        Collections.sort(buscarArtista);
+        System.out.println("Depois da ordenação");
+        System.out.println(buscarArtista);
+
+        Collections.sort(lista);
+        System.out.println(lista);
+
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
     }
 }
